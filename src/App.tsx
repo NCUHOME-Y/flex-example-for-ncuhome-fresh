@@ -121,8 +121,8 @@ function App() {
                                                 <Radio value="justify-center">居中</Radio>
                                                 <Radio value="justify-end">主轴结束侧</Radio>
                                                 <Radio value="justify-between">两端对齐</Radio>
-                                                <Radio value="justify-around">均分</Radio>
-                                                <Radio value="justify-evenly">均分（两端留白）</Radio>
+                                                <Radio value="justify-around">均分（内部空白部分相等）</Radio>
+                                                <Radio value="justify-evenly">均分（空白部分均相等）</Radio>
                                             </HStack>
                                         </RadioGroup>
                                     </AccordionPanel>
