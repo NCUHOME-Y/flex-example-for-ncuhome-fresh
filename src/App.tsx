@@ -83,6 +83,7 @@ function App() {
                                         </HStack>
                                     </AccordionPanel>
                                 </AccordionItem>
+
                                 <AccordionItem>
                                     <h2>
                                         <AccordionButton>
@@ -102,6 +103,7 @@ function App() {
                                         </RadioGroup>
                                     </AccordionPanel>
                                 </AccordionItem>
+
                                 <AccordionItem>
                                     <h2>
                                         <AccordionButton>
@@ -125,6 +127,7 @@ function App() {
                                         </RadioGroup>
                                     </AccordionPanel>
                                 </AccordionItem>
+
                                 <AccordionItem>
                                     <h2>
                                         <AccordionButton>
