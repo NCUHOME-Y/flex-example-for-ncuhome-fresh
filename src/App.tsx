@@ -63,7 +63,7 @@ function App() {
                                         </AccordionButton>
                                     </h2>
                                     <AccordionPanel>
-                                        <HStack gap={20}>
+                                        <HStack gap={20} wrap="wrap">
                                             <Checkbox value="card-inline-block">{t('使用内联盒子')}</Checkbox>
                                             <Checkbox value="card-vertical-middle">{t('垂直居中')}</Checkbox>
                                             <Checkbox value="card-padding-left">{t('来点左边距')}</Checkbox>
