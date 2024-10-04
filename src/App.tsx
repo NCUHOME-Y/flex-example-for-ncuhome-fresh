@@ -16,8 +16,10 @@ import {
 } from '@hope-ui/solid';
 import './App.css';
 import laoda from './assets/laoda.jpg';
+import { useI18n } from '@i18n-pro/solid';
 
 function App() {
+    const { t, setI18n } = useI18n();
     const [classNamesCheckbox, setClassNamesCheckbox] = createSignal<string[]>([]);
     const [flexDirection, setFlexDirection] = createSignal<string>();
     //justify-content and align-items
@@ -28,6 +30,12 @@ function App() {
             <main class="main">
                 <HopeProvider>
                     <div class="code">
+                        <RadioGroup defaultValue="zh" onChange={(e) => setI18n({ locale: e })}>
+                            <HStack spacing="$4" padding={18}>
+                                <Radio value="zh">名称</Radio>
+                                <Radio value="en">属性名</Radio>
+                            </HStack>
+                        </RadioGroup>
                         <CheckboxGroup onChange={setClassNamesCheckbox}>
                             <Accordion defaultIndex={1} width="$full">
                                 <AccordionItem>
@@ -56,9 +64,9 @@ function App() {
                                     </h2>
                                     <AccordionPanel>
                                         <HStack gap={20}>
-                                            <Checkbox value="card-inline-block">使用内联盒子</Checkbox>
-                                            <Checkbox value="card-vertical-middle">垂直居中</Checkbox>
-                                            <Checkbox value="card-padding-left">来点左边距</Checkbox>
+                                            <Checkbox value="card-inline-block">{t('使用内联盒子')}</Checkbox>
+                                            <Checkbox value="card-vertical-middle">{t('垂直居中')}</Checkbox>
+                                            <Checkbox value="card-padding-left">{t('来点左边距')}</Checkbox>
                                         </HStack>
                                     </AccordionPanel>
                                 </AccordionItem>
@@ -77,9 +85,9 @@ function App() {
                                             <Checkbox value="flex">
                                                 使用<Tag>Flex</Tag>
                                             </Checkbox>
-                                            <Checkbox value="gap-4">来点间距</Checkbox>
-                                            <Checkbox value="w-full h-72">固定宽高</Checkbox>
-                                            <Checkbox value="flex-fill-info">填充信息背景色</Checkbox>
+                                            <Checkbox value="gap-4">{t('来点间距')}</Checkbox>
+                                            <Checkbox value="w-full h-72">{t('固定宽高')}</Checkbox>
+                                            <Checkbox value="flex-fill-info">{t('填充信息背景色')}</Checkbox>
                                         </HStack>
                                     </AccordionPanel>
                                 </AccordionItem>
@@ -88,17 +96,19 @@ function App() {
                                     <h2>
                                         <AccordionButton>
                                             <Text flex={1} fontWeight="$medium" textAlign="start">
-                                                主轴方向
+                                                {t('主轴方向')}
                                             </Text>
                                             <AccordionIcon />
                                         </AccordionButton>
                                     </h2>
                                     <AccordionPanel>
                                         <RadioGroup defaultValue="1" paddingLeft={20} onChange={setFlexDirection}>
-                                            <HStack spacing="$4">
+                                            <HStack spacing="$4" wrap="wrap">
                                                 <Radio value="">禁用</Radio>
-                                                <Radio value="flex-row">水平</Radio>
-                                                <Radio value="flex-col">垂直</Radio>
+                                                <Radio value="flex-row">{t('水平')}</Radio>
+                                                <Radio value="flex-col">{t('垂直')}</Radio>
+                                                <Radio value="flex-row-reverse">{t('水平反转')}</Radio>
+                                                <Radio value="flex-col-reverse">{t('垂直反转')}</Radio>
                                             </HStack>
                                         </RadioGroup>
                                     </AccordionPanel>
@@ -108,7 +118,7 @@ function App() {
                                     <h2>
                                         <AccordionButton>
                                             <Text flex={1} fontWeight="$medium" textAlign="start">
-                                                justify-content
+                                                {t('主轴空间分配')}
                                             </Text>
                                             <AccordionIcon />
                                         </AccordionButton>
@@ -117,12 +127,12 @@ function App() {
                                         <RadioGroup defaultValue="1" paddingLeft={20} onChange={setJustifyContent}>
                                             <HStack spacing="$4" wrap="wrap">
                                                 <Radio value="">禁用</Radio>
-                                                <Radio value="justify-start">主轴起始侧</Radio>
-                                                <Radio value="justify-center">居中</Radio>
-                                                <Radio value="justify-end">主轴结束侧</Radio>
-                                                <Radio value="justify-between">两端对齐</Radio>
-                                                <Radio value="justify-around">均分（内部空白部分相等）</Radio>
-                                                <Radio value="justify-evenly">均分（空白部分均相等）</Radio>
+                                                <Radio value="justify-start">{t('主轴起始侧')}</Radio>
+                                                <Radio value="justify-center">{t('居中')}</Radio>
+                                                <Radio value="justify-end">{t('主轴结束侧')}</Radio>
+                                                <Radio value="justify-between">{t('两端对齐')}</Radio>
+                                                <Radio value="justify-around">{t('均分（内部空白部分相等）')}</Radio>
+                                                <Radio value="justify-evenly">{t('均分（空白部分均相等）')}</Radio>
                                             </HStack>
                                         </RadioGroup>
                                     </AccordionPanel>
@@ -132,7 +142,7 @@ function App() {
                                     <h2>
                                         <AccordionButton>
                                             <Text flex={1} fontWeight="$medium" textAlign="start">
-                                                align-items
+                                                {t('交叉轴空间分配')}
                                             </Text>
                                             <AccordionIcon />
                                         </AccordionButton>
@@ -141,10 +151,10 @@ function App() {
                                         <RadioGroup defaultValue="1" paddingLeft={20} onChange={setAlignItems}>
                                             <HStack spacing="$4" wrap="wrap">
                                                 <Radio value="">禁用</Radio>
-                                                <Radio value="items-start">交叉轴起始侧</Radio>
-                                                <Radio value="items-center">居中</Radio>
-                                                <Radio value="items-end">交叉轴结束侧</Radio>
-                                                <Radio value="items-stretch">拉伸</Radio>
+                                                <Radio value="items-start">{t('交叉轴起始侧')}</Radio>
+                                                <Radio value="items-center">{t('居中')}</Radio>
+                                                <Radio value="items-end">{t('交叉轴结束侧')}</Radio>
+                                                <Radio value="items-stretch">{t('拉伸')}</Radio>
                                             </HStack>
                                         </RadioGroup>
                                     </AccordionPanel>
