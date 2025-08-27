@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Yarn
+yarn-error.log
+yarn-debug.log*
+.yarn/
+.pnp*
