@@ -1,7 +1,8 @@
-import { defineConfig } from 'vite';
-import solid from 'vite-plugin-solid';
-import tsconfigPaths from 'vite-tsconfig-paths';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import tsconfigPaths from "vite-tsconfig-paths";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-    plugins: [solid(), tsconfigPaths()],
+  plugins: [react(), tsconfigPaths(), tailwindcss()],
 });
