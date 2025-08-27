@@ -175,7 +175,7 @@ function App() {
                             <img src={laoda} class="img-base img-style" />
                             <div class="info-style">
                                 <p class="title-base">牢大</p>
-                                <p>职位：前端</p>
+                                <p>职位：站长</p>
                             </div>
                         </div>
                     </div>
