@@ -1,4 +1,5 @@
 {
+    "使用内联元素": "display: inline;",
     "使用内联盒子": "display: inline-block;",
     "垂直居中": "vertical-align: middle;",
     "来点左边距": "padding-left: 20px;",
