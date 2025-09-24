@@ -7,15 +7,34 @@
     bottom: 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    gap: 38px;
+    padding: 20px;
+    gap: 20px;
+    overflow: hidden;
 }
 
-.code {
+.controls {
     width: 40%;
     background: white;
     border-radius: 13px;
+    padding: 20px;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.content-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+    min-width: 0;
+}
+
+.code-display {
+    background: white;
+    border-radius: 13px;
+    padding: 20px;
+    flex-shrink: 0;
 }
 
 .result{
@@ -23,7 +42,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    background: white;
+    border-radius: 13px;
+    padding: 40px;
+    flex: 1;
+    min-height: 200px;
 }
 
 .card-base {
@@ -61,12 +84,7 @@
     background-color: rgba(100, 100, 100, 0.8);
 }
 
-/* 代码显示区域样式 */
-.code-display {
-    padding: 20px;
-    border-top: 1px solid #e0e0e0;
-    margin-top: 20px;
-}
+/* 代码显示区域样式已移至上方 */
 
 .code-display h3 {
     margin: 10px 0 5px 0;

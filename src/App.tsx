@@ -22,11 +22,9 @@ function App() {
         i18n.changeLanguage(value);
     };
 
-    // 将 Tailwind 类名转换为传统 CSS
+    // 将 类名转换为传统 CSS
     const getTraditionCSS = () => {
         const cssRules: string[] = [];
-        
-        // 处理 checkbox 选择的类名
         classNamesCheckbox.forEach(className => {
             switch (className) {
                 case 'card-base':
@@ -121,7 +119,7 @@ function App() {
     return (
       <>
         <main className="main">
-          <div className="code">
+          <div className="controls">
             <RadioGroup
               value={i18n.language}
               onValueChange={handleLanguageChange}
@@ -218,7 +216,9 @@ function App() {
                 </AccordionItem>
               </Accordion>
             </CheckboxGroup>
+          </div>
 
+          <div className="content-area">
             <div className="code-display">
               <h3>CSS :</h3>
               <pre className="css-code">
@@ -242,20 +242,21 @@ ${getTraditionCSS()
 </div>`}
               </pre>
             </div>
-          </div>
-          <div className="result">
-            <div
-              className={[
-                classNamesCheckbox.join(" "),
-                flexDirection,
-                justifyContent,
-                alignItems,
-              ].join(" ")}
-            >
-              <img src={laoda} className="img-base img-style" />
-              <div className="info-style">
-                <p className="title-base">牢大</p>
-                <p>职位：站长</p>
+
+            <div className="result">
+              <div
+                className={[
+                  classNamesCheckbox.join(" "),
+                  flexDirection,
+                  justifyContent,
+                  alignItems,
+                ].join(" ")}
+              >
+                <img src={laoda} className="img-base img-style" />
+                <div className="info-style">
+                  <p className="title-base">牢大</p>
+                  <p>职位：站长</p>
+                </div>
               </div>
             </div>
           </div>
