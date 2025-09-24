@@ -60,3 +60,45 @@
 .flex-fill-info .info-style{
     background-color: rgba(100, 100, 100, 0.8);
 }
+
+/* 代码显示区域样式 */
+.code-display {
+    padding: 20px;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 20px;
+}
+
+.code-display h3 {
+    margin: 10px 0 5px 0;
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+}
+
+.css-code {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    padding: 15px;
+    border-radius: 6px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    margin: 0;
+    border: 1px solid #333;
+}
+
+.html-code {
+    background-color: #282c34;
+    color: #abb2bf;
+    padding: 15px;
+    border-radius: 6px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 12px;
+    line-height: 1.4;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    margin: 0;
+    border: 1px solid #3e4451;
+}
