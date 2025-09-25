@@ -18,6 +18,12 @@ export const generateCSS = (
           "color: white;"
         );
         break;
+      case "card-inline":
+        cssRules.push(
+          "/* 内联元素 */",
+          ".info-style, .img-style { display: inline; }"
+        );
+        break;
       case "card-inline-block":
         cssRules.push(
           "/* 内联盒子 */",

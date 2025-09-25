@@ -58,6 +58,7 @@ export default function ControlPanel({
           </AccordionItem>
           <AccordionItem key="2" title="第一种方法">
             <div className="flex gap-5 flex-wrap">
+              <Checkbox value="card-inline">{t("使用内联元素")}</Checkbox>
               <Checkbox value="card-inline-block">{t("使用内联盒子")}</Checkbox>
               <Checkbox value="card-vertical-middle">{t("垂直居中")}</Checkbox>
               <Checkbox value="card-padding-left">{t("来点左边距")}</Checkbox>
